@@ -1,0 +1,49 @@
+const grid = document.querySelector('#review-grid');
+const tabs = [...document.querySelectorAll('[data-variant]')];
+const panes = [...document.querySelectorAll('.preview-pane')];
+const compareButton = document.querySelector('#compare-toggle');
+const deviceButton = document.querySelector('#device-toggle');
+let current = 'light', compare = true, mobile = window.matchMedia('(max-width:600px)').matches;
+function fitFrames() {
+  document.querySelectorAll('.preview-stage').forEach(stage => {
+    if (stage.closest('[hidden]')) return;
+    const frame = stage.querySelector('iframe');
+    const targetWidth = mobile ? 390 : 1280;
+    const scale = Math.min(stage.clientWidth / targetWidth, mobile ? 1 : Infinity);
+    if (!scale) return;
+    frame.style.width = targetWidth + 'px';
+    frame.style.height = Math.round(stage.clientHeight / scale) + 'px';
+    frame.style.left = mobile ? Math.max(0,(stage.clientWidth-targetWidth*scale)/2) + 'px' : '0';
+    frame.style.transform = 'scale(' + scale + ')';
+  });
+}
+function render() {
+  grid.classList.toggle('compare',compare);
+  grid.classList.toggle('is-mobile',mobile);
+  tabs.forEach(tab => {const selected = tab.dataset.variant === current;tab.setAttribute('aria-selected',String(selected));tab.tabIndex = selected ? 0 : -1;});
+  panes.forEach(pane => {pane.hidden = !compare && pane.id !== current+'-pane';});
+  compareButton.setAttribute('aria-pressed',String(compare));
+  compareButton.textContent = compare ? '返回单页' : '并排对比';
+  deviceButton.setAttribute('aria-pressed',String(mobile));
+  deviceButton.textContent = mobile ? '桌面视图' : '手机视图';
+  document.querySelector('#review-description').textContent = compare ? '01 暗色科技 / 02 C 浅色产品。两侧页面可分别滚动与操作。' : current === 'light' ? '方案 C：浅色背景、产品界面前置、可切换的业务工作流。' : '方案 01：暗色背景、动态 AI 视觉、软件产品展示。';
+  requestAnimationFrame(fitFrames);
+}
+tabs.forEach((tab,index) => {
+  tab.addEventListener('click',()=>{current=tab.dataset.variant;compare=false;render();});
+  tab.addEventListener('keydown',event=>{
+    let next;
+    if(event.key==='ArrowRight') next=(index+1)%tabs.length;
+    if(event.key==='ArrowLeft') next=(index-1+tabs.length)%tabs.length;
+    if(event.key==='Home') next=0;
+    if(event.key==='End') next=tabs.length-1;
+    if(next!==undefined){event.preventDefault();current=tabs[next].dataset.variant;compare=false;render();tabs[next].focus();}
+  });
+});
+compareButton.addEventListener('click',()=>{compare=!compare;render();});
+deviceButton.addEventListener('click',()=>{mobile=!mobile;render();});
+const observer=new ResizeObserver(fitFrames);
+document.querySelectorAll('.preview-stage').forEach(stage=>observer.observe(stage));
+window.addEventListener('pagehide',()=>observer.disconnect(),{once:true});
+window.addEventListener('pageshow',event=>{if(event.persisted){document.querySelectorAll('.preview-stage').forEach(stage=>observer.observe(stage));fitFrames();}});
+render();
