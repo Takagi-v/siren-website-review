@@ -1,0 +1,148 @@
+/* Shared readability pass for the two review directions. */
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.nav-links { font-size: 15px; gap: 24px; }
+.nav .brand { font-size: 20px; }
+.brand-en, .brand-product, .engine-word { font-family: "IBM Plex Sans", sans-serif; }
+.button { font-size: 15px; min-height: 48px; gap: 22px; border-radius: 5px; }
+.nav-contact { font-size: 14px; min-height: 44px; gap: 12px; }
+.hero-actions { flex-wrap: wrap; }
+.hero h1 { font-size: clamp(42px, 4.9vw, 68px); line-height: 1.28; letter-spacing: -.025em; }
+.eyebrow { font-size: 14px; letter-spacing: .035em; }
+.hero-description { font-size: 18px; line-height: 1.8; text-wrap: pretty; }
+.hero-copy .hero-description { max-width: 25em; }
+.text-button, .text-link { font-size: 15px; gap: 16px; }
+.hero-intro { padding-block: 34px 28px; }
+.hero:has(.hero-intro)::before, .hero:has(.hero-intro)::after { content: none; }
+.engine-visual::after { opacity: .38; }
+.engine-word { letter-spacing: .12em; }
+.engine-node { font-size: 13px; grid-template-columns: 6px auto; }
+.visual-top, .visual-bottom { font-size: 12px; }
+.visual-bottom { color: #a7baad; }
+.product-callout, .frame-toolbar, .frame-top { font-size: 12px; }
+.frame-identity { font-size: 12px; }
+.frame-caption, .frame-bottom { font-size: 13px; }
+.product-tabs button { font-size: 14px; min-height: 42px; }
+.ecosystem h2, .ecosystem-head > div { font-size: 13px; }
+
+.section-intro h2, .section-heading h2, .product-intro h2 {
+  font-size: clamp(33px, 3.55vw, 48px);
+  letter-spacing: -.025em;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.section-label, .product-principles, .format-list, .trace-line { font-size: 13px; }
+.section-intro > p:last-child:not(.section-label),
+.section-heading > p:last-child:not(.section-label),
+.product-intro > p:last-child,
+.solution > p, .foundation-grid p, .workflow-panel p, .workflow-selector > p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.solution { background: #171d19; border-radius: 8px; }
+.solution h3 { font-size: clamp(24px, 2.5vw, 32px); text-wrap: balance; }
+.solution-heading, .inline-link, .query, .case-item { font-size: 14px; }
+.case-state, .answer-small, .answer-line b { font-size: 12px; }
+.answer-line { font-size: 14px; }
+.foundation-grid h3 { margin-top: 0; }
+.business-tabs strong { font-size: 17px; }
+.business-tabs button > span { font-size: 13px; }
+.step-button { font-size: 15px; }
+.source-list > p, .document-label, .preview-toolbar small { font-size: 12px; }
+.source-row, .review-strip, .document-excerpt > span { font-size: 13px; }
+.source-document > p:not(.document-label), .document-excerpt p { font-size: 14px; }
+.principles { font-size: 15px; }
+
+.case-studies { margin-top: 36px; }
+.case-study summary { gap: 32px; padding-block: 28px; }
+.case-index { min-width: 116px; font-size: 13px; letter-spacing: .02em; }
+.case-client { font-size: 24px; font-weight: 500; line-height: 1.45; }
+.case-subtitle { font-size: 15px; line-height: 1.65; }
+.case-detail { padding-left: 148px; }
+.case-detail p { font-size: 16px; line-height: 1.85; }
+.case-detail > span { font-size: 13px; }
+.case-arrow, .case-study[open] .case-arrow { transform: none; }
+.case-arrow::before { content: "+"; }
+.case-study[open] .case-arrow::before { content: "−"; }
+.case-continuation {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.case-continuation > span { font-size: 25px; letter-spacing: .1em; line-height: 1; }
+
+.team-grid h3 { font-size: 20px; font-weight: 500; }
+.team-grid span { font-size: 13px; }
+.team-grid p { font-size: 14px; line-height: 1.75; margin-top: 14px; }
+.contact-section h2 { font-size: clamp(29px, 3.4vw, 44px); font-weight: 500; }
+.footer, .footer > span:last-child { font-size: 13px; }
+dialog p:not(.section-label) { font-size: 15px; }
+.meeting-topics { font-size: 14px; }
+
+@media (max-width: 1000px) {
+  .nav-links { gap: 16px; font-size: 14px; }
+  .hero h1 { font-size: clamp(40px, 5.3vw, 56px); }
+  .hero-description { font-size: 16px; }
+  .visual-top, .visual-bottom, .engine-node { font-size: 11px; }
+  .case-study summary { gap: 24px; }
+  .case-index { min-width: 82px; }
+  .case-client { font-size: 22px; }
+  .case-detail { padding-left: 106px; }
+}
+
+@media (max-width: 800px) {
+  .nav .brand { font-size: 17px; }
+  .nav-contact { font-size: 13px; padding-inline: 10px; }
+  .menu-toggle { width: 44px; height: 44px; }
+  .hero-intro { padding-block: 28px 24px; }
+  .hero h1 { font-size: clamp(38px, 6.8vw, 48px); }
+  .eyebrow { font-size: 12px; }
+  .product-tabs button { font-size: 13px; }
+  .business-tabs strong, .step-button { font-size: 14px; }
+  .business-tabs button > span { font-size: 11px; }
+  .source-row, .frame-caption, .frame-bottom, .source-list > p { font-size: 12px; }
+  .footer, .footer > span:last-child { font-size: 12px; }
+}
+
+@media (max-width: 600px) {
+  .nav { gap: 8px; }
+  .hero h1 { font-size: clamp(37px, 10.5vw, 43px); }
+  .hero-description { font-size: 16px; }
+  .hero-actions { gap: 18px; }
+  .hero-actions .button, .contact-section .button, dialog .button {
+    font-size: 14px;
+    min-height: 44px;
+    padding-inline: 14px;
+    gap: 12px;
+  }
+  .text-button, .text-link { font-size: 14px; gap: 10px; }
+  .section-intro h2, .section-heading h2, .product-intro h2 { font-size: 32px; }
+  .section-intro > p:last-child:not(.section-label),
+  .section-heading > p:last-child:not(.section-label),
+  .product-intro > p:last-child,
+  .solution > p, .foundation-grid p, .workflow-panel p, .workflow-selector > p {
+    font-size: 15px;
+  }
+  .workflow-selector button { min-width: 0; }
+  .case-study summary { gap: 10px 15px; flex-wrap: wrap; align-items: flex-start; }
+  .case-index { width: 100%; min-width: 0; font-size: 12px; }
+  .case-client { font-size: 20px; }
+  .case-subtitle, .case-continuation { font-size: 14px; }
+  .case-detail { padding-left: 0; }
+  .case-detail p { font-size: 15px; }
+  .team-grid h3 { font-size: 18px; }
+  .team-grid span { font-size: 12px; }
+  .team-grid p { font-size: 13px; }
+}
+
+@media (max-width: 360px) {
+  .nav .brand { font-size: 16px; }
+  .nav-contact > span[aria-hidden="true"] { display: none; }
+  .business-tabs button > span { white-space: normal; }
+}

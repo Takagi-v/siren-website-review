@@ -8,7 +8,7 @@ function fitFrames() {
   document.querySelectorAll('.preview-stage').forEach(stage => {
     if (stage.closest('[hidden]')) return;
     const frame = stage.querySelector('iframe');
-    const targetWidth = mobile ? 390 : 1280;
+    const targetWidth = mobile ? 390 : compare ? 1280 : Math.max(960, stage.clientWidth);
     const scale = Math.min(stage.clientWidth / targetWidth, mobile ? 1 : Infinity);
     if (!scale) return;
     frame.style.width = targetWidth + 'px';
@@ -26,7 +26,7 @@ function render() {
   compareButton.textContent = compare ? '返回单页' : '并排对比';
   deviceButton.setAttribute('aria-pressed',String(mobile));
   deviceButton.textContent = mobile ? '桌面视图' : '手机视图';
-  document.querySelector('#review-description').textContent = compare ? '01 暗色科技 / 02 C 浅色产品。两侧页面可分别滚动与操作。' : current === 'light' ? '方案 C：浅色背景、产品界面前置、可切换的业务工作流。' : '方案 01：暗色背景、动态 AI 视觉、软件产品展示。';
+  document.querySelector('#review-description').textContent = compare ? '两版可独立滚动。点「打开完整页面」可查看实际字号。' : current === 'light' ? '方案 C：浅色背景，首屏展示产品界面。' : '方案 01：暗色背景，首屏展示 SIREN 智能系统。';
   requestAnimationFrame(fitFrames);
 }
 tabs.forEach((tab,index) => {
