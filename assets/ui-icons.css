@@ -1,0 +1,41 @@
+/* Phosphor regular icons, served locally. See ui-icons/LICENSE. */
+.ui-icon {
+  display: inline-block;
+  flex: none;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: currentColor;
+  vertical-align: -.18em;
+  -webkit-mask: var(--ui-glyph) center / contain no-repeat;
+  mask: var(--ui-glyph) center / contain no-repeat;
+}
+
+[data-icon="arrow-right"] { --ui-glyph: url("ui-icons/arrow-right.svg"); }
+[data-icon="arrow-up-right"] { --ui-glyph: url("ui-icons/arrow-up-right.svg"); }
+[data-icon="arrows-out"] { --ui-glyph: url("ui-icons/arrows-out.svg"); }
+[data-icon="books"] { --ui-glyph: url("ui-icons/books.svg"); }
+[data-icon="broadcast"] { --ui-glyph: url("ui-icons/broadcast.svg"); }
+[data-icon="browser"] { --ui-glyph: url("ui-icons/browser.svg"); }
+[data-icon="calendar-blank"] { --ui-glyph: url("ui-icons/calendar-blank.svg"); }
+[data-icon="caret-down"] { --ui-glyph: url("ui-icons/caret-down.svg"); }
+[data-icon="chart-line-up"] { --ui-glyph: url("ui-icons/chart-line-up.svg"); }
+[data-icon="check"] { --ui-glyph: url("ui-icons/check.svg"); }
+[data-icon="columns"] { --ui-glyph: url("ui-icons/columns.svg"); }
+[data-icon="copy-simple"] { --ui-glyph: url("ui-icons/copy-simple.svg"); }
+[data-icon="crosshair-simple"] { --ui-glyph: url("ui-icons/crosshair-simple.svg"); }
+[data-icon="device-mobile"] { --ui-glyph: url("ui-icons/device-mobile.svg"); }
+[data-icon="file-text"] { --ui-glyph: url("ui-icons/file-text.svg"); }
+[data-icon="magnifying-glass"] { --ui-glyph: url("ui-icons/magnifying-glass.svg"); }
+[data-icon="pause"] { --ui-glyph: url("ui-icons/pause.svg"); }
+[data-icon="tree-structure"] { --ui-glyph: url("ui-icons/tree-structure.svg"); }
+[data-icon="x"] { --ui-glyph: url("ui-icons/x.svg"); }
+
+.marquee-control[aria-pressed="true"] [data-icon="pause"] {
+  --ui-glyph: url("ui-icons/play.svg");
+}
+#device-toggle[aria-pressed="true"] [data-icon="device-mobile"] {
+  --ui-glyph: url("ui-icons/monitor.svg");
+}
+#compare-toggle[aria-pressed="true"] [data-icon="columns"] {
+  --ui-glyph: url("ui-icons/square.svg");
+}

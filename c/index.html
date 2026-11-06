@@ -9,8 +9,9 @@
   <title>原初之幕 SIREN · 方案 C</title>
   <link rel="icon" href="../assets/veil-logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="../assets/site-refinements.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="../assets/ui-icons.css?v=3">
+  <link rel="stylesheet" href="../assets/site-refinements.css?v=3">
+  <script src="app.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -18,33 +19,33 @@
     <nav class="nav shell" aria-label="主导航">
       <a class="brand" href="#main" aria-label="原初之幕 首页"><span class="brand-mark"><img src="../assets/veil-logo.png" alt=""></span><span>原初之幕 <span class="brand-product">/ SIREN</span></span></a>
       <div class="nav-links"><a href="#product">产品与能力</a><a href="#solutions">解决方案</a><a href="#cases">客户事例</a><a href="#about">关于我们</a></div>
-      <button class="button primary nav-contact" data-contact>预约系统演示 <span aria-hidden="true">↗</span></button>
+      <button class="button primary nav-contact" data-contact>预约系统演示<span class="ui-icon" data-icon="calendar-blank" aria-hidden="true"></span></button>
       <button class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </nav>
-    <div id="mobile-menu" class="mobile-menu" hidden><a href="#product">产品与能力</a><a href="#solutions">解决方案</a><a href="#cases">客户事例</a><a href="#about">关于我们</a><button data-contact>预约系统演示 ↗</button></div>
+    <div id="mobile-menu" class="mobile-menu" hidden><a href="#product">产品与能力</a><a href="#solutions">解决方案</a><a href="#cases">客户事例</a><a href="#about">关于我们</a><button data-contact>预约系统演示<span class="ui-icon" data-icon="calendar-blank" aria-hidden="true"></span></button></div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title" id="product">
       <div class="hero-intro shell">
-        <p class="eyebrow">SIREN 塞壬法律智能系统</p>
+        <p class="eyebrow"><span class="ui-icon" data-icon="books" aria-hidden="true"></span>SIREN 塞壬法律智能系统</p>
         <h1 id="hero-title">把法律知识<br><span>变成业务能力</span></h1>
         <p class="hero-description">一套系统，连接 GEO 增长与 AI 案件管办。</p>
-        <div class="hero-actions"><button class="button primary" data-contact>预约系统演示 <span aria-hidden="true">↗</span></button><a class="text-link" href="#solutions">查看产品能力 <span aria-hidden="true">→</span></a></div>
+        <div class="hero-actions"><button class="button primary" data-contact>预约系统演示<span class="ui-icon" data-icon="calendar-blank" aria-hidden="true"></span></button><a class="text-link" href="#solutions">查看产品能力<span class="ui-icon" data-icon="arrow-right" aria-hidden="true"></span></a></div>
       </div>
       <div class="hero-product shell">
         <div class="product-callout left-callout"><span>从资料到可调用知识</span><i aria-hidden="true"></i></div>
         <div class="product-frame" id="product-panel" role="tabpanel" aria-labelledby="knowledge-tab">
-          <div class="frame-toolbar"><span class="frame-identity">SIREN <span>/</span> 工作台</span><span class="frame-mode" id="screen-name">多模态知识库</span><button class="zoom-screen" aria-label="放大产品界面">↗</button></div>
+          <div class="frame-toolbar"><span class="frame-identity"><span class="ui-icon" data-icon="browser" aria-hidden="true"></span>SIREN 工作台</span><span class="frame-mode" id="screen-name">多模态知识库</span><button class="zoom-screen" aria-label="放大产品界面"><span class="ui-icon" data-icon="arrows-out" aria-hidden="true"></span></button></div>
           <button class="screen-button" aria-label="放大查看产品界面"><img id="product-screen" src="../assets/knowledge-library.png" alt="SIREN 客户资料库实际界面，包含资料搜索、上传和状态管理" width="1944" height="1114" fetchpriority="high"></button>
-          <div class="frame-bottom"><span id="screen-description">将文档、表格、图片与扫描件，沉淀为可检索的专业资料。</span><span>产品实景</span></div>
+          <div class="frame-bottom"><span id="screen-description">将文档、表格、图片与扫描件，沉淀为可检索的专业资料。</span><span class="product-status"><span class="ui-icon" data-icon="check" aria-hidden="true"></span>产品实景</span></div>
         </div>
         <div class="product-callout right-callout"><i aria-hidden="true"></i><span>审核与来源贯穿流程</span></div>
       </div>
-      <div class="product-tabs shell" role="tablist" aria-label="产品界面"><button role="tab" id="knowledge-tab" aria-selected="true" aria-controls="product-panel" data-screen="knowledge">多模态知识库</button><button role="tab" id="publishing-tab" aria-selected="false" aria-controls="product-panel" data-screen="publishing" tabindex="-1">多平台运营</button></div>
+      <div class="product-tabs shell" role="tablist" aria-label="产品界面"><button role="tab" id="knowledge-tab" aria-selected="true" aria-controls="product-panel" data-screen="knowledge"><span class="ui-icon" data-icon="books" aria-hidden="true"></span>多模态知识库</button><button role="tab" id="publishing-tab" aria-selected="false" aria-controls="product-panel" data-screen="publishing" tabindex="-1"><span class="ui-icon" data-icon="broadcast" aria-hidden="true"></span>多平台运营</button></div>
     </section>
 
     <section class="ecosystem" aria-labelledby="ecosystem-title">
-      <div class="ecosystem-head shell"><h2 id="ecosystem-title">AI 模型与搜索生态</h2><div><span>让专业连接更多 AI 场景</span><button class="marquee-control" aria-label="暂停图标滚动" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div></div>
+      <div class="ecosystem-head shell"><h2 id="ecosystem-title">AI 模型与搜索生态</h2><div><span>让专业连接更多 AI 场景</span><button class="marquee-control" aria-label="暂停图标滚动" aria-pressed="false"><span class="ui-icon" data-icon="pause" aria-hidden="true"></span></button></div></div>
       <div class="logo-viewport"><div class="logo-track"><div class="logo-group">
         <span class="ai-logo"><img src="../assets/icons/deepseek.svg" alt="" width="30" height="30">DeepSeek</span>
         <span class="ai-logo"><img src="../assets/icons/doubao.svg" alt="" width="30" height="30">豆包</span>
@@ -67,23 +68,23 @@
         <div class="step-list" role="tablist" aria-label="工作流步骤" aria-orientation="vertical"></div>
         <div class="workflow-preview" role="tabpanel" id="step-panel" aria-labelledby="step-3">
           <div class="preview-toolbar"><span id="step-heading">证据组织</span><small>工作流概念示意</small></div>
-          <div class="preview-body"><div class="source-list"><p id="source-label">案件材料</p><div class="source-row"><span class="file-icon" aria-hidden="true">≡</span><span id="source-one">合同与附件</span></div><div class="source-row"><span class="file-icon" aria-hidden="true">≡</span><span id="source-two">往来邮件</span></div><div class="source-row"><span class="file-icon" aria-hidden="true">≡</span><span id="source-three">付款凭证</span></div><div class="source-row selected"><span class="file-icon" aria-hidden="true">≡</span><span id="source-four">会议纪要</span></div></div><div class="source-document"><p class="document-label" id="document-label">来源定位</p><h3 id="document-title">让每一项判断，都有依据。</h3><p id="document-description">组织证据目录、关联事实与资料，保留原始位置，辅助识别材料缺口。</p><div class="document-excerpt"><span>关联原始资料</span><p id="document-highlight">回到原始文件，核对来源与具体内容。</p></div><div class="document-lines" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
-          <div class="review-strip"><span class="review-icon" aria-hidden="true">✓</span><span>关键输出，交由专业人员审核</span></div>
+          <div class="preview-body"><div class="source-list"><p id="source-label">案件材料</p><div class="source-row"><span class="ui-icon" data-icon="file-text" aria-hidden="true"></span><span id="source-one">合同与附件</span></div><div class="source-row"><span class="ui-icon" data-icon="file-text" aria-hidden="true"></span><span id="source-two">往来邮件</span></div><div class="source-row"><span class="ui-icon" data-icon="file-text" aria-hidden="true"></span><span id="source-three">付款凭证</span></div><div class="source-row selected"><span class="ui-icon" data-icon="file-text" aria-hidden="true"></span><span id="source-four">会议纪要</span></div></div><div class="source-document"><p class="document-label" id="document-label">来源定位</p><h3 id="document-title">让每一项判断，都有依据。</h3><p id="document-description">组织证据目录、关联事实与资料，保留原始位置，辅助识别材料缺口。</p><div class="document-excerpt"><span>关联原始资料</span><p id="document-highlight">回到原始文件，核对来源与具体内容。</p></div><div class="document-lines" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
+          <div class="review-strip"><span class="review-icon" aria-hidden="true"><span class="ui-icon" data-icon="check" aria-hidden="true"></span></span><span>关键输出，交由专业人员审核</span></div>
         </div>
       </div>
       <div class="principles"><span>证据优先</span><span>来源可追溯</span><span>权限隔离</span><span>操作留痕</span></div>
     </section>
 
-    <section class="foundation section" aria-labelledby="foundation-title"><div class="shell"><div class="section-heading reveal"><h2 id="foundation-title">SIREN 的技术底座</h2></div><div class="foundation-grid"><article class="reveal"><h3>多模态知识库</h3><p>解析文档、表格、图片与扫描件，保留原始位置、资料版本和引用关系。</p><div class="format-list"><span>PDF</span><span>DOCX</span><span>PPTX</span><span>XLSX</span></div></article><article class="reveal"><h3>Agent 工作流</h3><p>以法律意图与知识检索为基础，编排内容生产、媒体分发与案件管办任务。</p><div class="agent-path"><span>问题</span><i aria-hidden="true">→</i><span>知识</span><i aria-hidden="true">→</i><span>行动</span></div></article><article class="reveal"><h3>协作与结果核验</h3><p>通过权限、审核与操作留痕组织协作，留存回答快照、发布记录和执行结果。</p><div class="trace-line"><span aria-hidden="true">✓</span>输入、执行与结果相互关联</div></article></div></div></section>
+    <section class="foundation section" aria-labelledby="foundation-title"><div class="shell"><div class="section-heading reveal"><h2 id="foundation-title">SIREN 的技术底座</h2></div><div class="foundation-grid"><article class="reveal"><h3><span class="icon-tile" aria-hidden="true"><span class="ui-icon" data-icon="books" aria-hidden="true"></span></span>多模态知识库</h3><p>解析文档、表格、图片与扫描件，保留原始位置、资料版本和引用关系。</p><div class="format-list"><span>PDF</span><span>DOCX</span><span>PPTX</span><span>XLSX</span></div></article><article class="reveal"><h3><span class="icon-tile" aria-hidden="true"><span class="ui-icon" data-icon="tree-structure" aria-hidden="true"></span></span>Agent 工作流</h3><p>以法律意图与知识检索为基础，编排内容生产、媒体分发与案件管办任务。</p><div class="agent-path"><span>问题</span><i aria-hidden="true">→</i><span>知识</span><i aria-hidden="true">→</i><span>行动</span></div></article><article class="reveal"><h3><span class="icon-tile" aria-hidden="true"><span class="ui-icon" data-icon="check" aria-hidden="true"></span></span>协作与结果核验</h3><p>通过权限、审核与操作留痕组织协作，留存回答快照、发布记录和执行结果。</p><div class="trace-line"><span class="ui-icon" data-icon="check" aria-hidden="true"></span>输入、执行与结果相互关联</div></article></div></div></section>
 
-    <section class="cases section shell" id="cases" aria-labelledby="cases-title"><div class="section-intro reveal"><h2 id="cases-title">客户事例</h2><p>法律品牌在 AI 回答中的呈现与官网 GEO 改造。</p></div><div class="case-studies"><details class="case-study reveal"><summary><span class="case-index">品牌增长</span><span class="case-info"><span class="case-client">北京通商律师事务所</span><span class="case-subtitle">法律品牌在 AI 回答中的呈现优化</span></span><span class="case-arrow" aria-hidden="true"></span></summary><div class="case-detail"><p>围绕法律服务相关问题，观察品牌在 AI 回答中的描述与引用，结合专业资料与公开信源开展优化。</p><span>品牌信息 · 专业内容 · 回答表现</span></div></details><details class="case-study reveal"><summary><span class="case-index">官网改造</span><span class="case-info"><span class="case-client">河南良承律师事务所</span><span class="case-subtitle">官网 GEO 适配化改造</span></span><span class="case-arrow" aria-hidden="true"></span></summary><div class="case-detail"><p>重新组织律师、业务与案例信息，建立专题、FAQ 与结构化标记，让官网形成持续更新、关系清晰的公开信源。</p><span>信息架构 · 律师实体 · 案例与 FAQ · 结构化信息</span></div></details></div><p class="case-continuation"><span aria-hidden="true">……</span>以上为部分客户事例</p></section>
+    <section class="cases section shell" id="cases" aria-labelledby="cases-title"><div class="section-intro reveal"><h2 id="cases-title">客户事例</h2><p>法律品牌在 AI 回答中的呈现与官网 GEO 改造。</p></div><div class="case-studies"><details class="case-study reveal"><summary><span class="case-index"><span class="case-tag"><span class="ui-icon" data-icon="chart-line-up" aria-hidden="true"></span>品牌增长</span></span><span class="case-info"><span class="case-client">北京通商律师事务所</span><span class="case-subtitle">法律品牌在 AI 回答中的呈现优化</span></span><span class="case-arrow" aria-hidden="true"><span class="ui-icon" data-icon="caret-down" aria-hidden="true"></span></span></summary><div class="case-detail"><p>围绕法律服务相关问题，观察品牌在 AI 回答中的描述与引用，结合专业资料与公开信源开展优化。</p><span>品牌信息 · 专业内容 · 回答表现</span></div></details><details class="case-study reveal"><summary><span class="case-index"><span class="case-tag"><span class="ui-icon" data-icon="browser" aria-hidden="true"></span>官网改造</span></span><span class="case-info"><span class="case-client">河南良承律师事务所</span><span class="case-subtitle">官网 GEO 适配化改造</span></span><span class="case-arrow" aria-hidden="true"><span class="ui-icon" data-icon="caret-down" aria-hidden="true"></span></span></summary><div class="case-detail"><p>重新组织律师、业务与案例信息，建立专题、FAQ 与结构化标记，让官网形成持续更新、关系清晰的公开信源。</p><span>信息架构 · 律师实体 · 案例与 FAQ · 结构化信息</span></div></details></div><p class="case-continuation"><span aria-hidden="true">……</span>以上为部分客户事例</p></section>
 
     <section class="about section shell" id="about" aria-labelledby="about-title"><div class="section-intro reveal"><h2 id="about-title">关于原初之幕</h2><p>团队来自法律服务、品牌商业化、大模型算法与智能体工程领域。</p></div><div class="team-grid reveal"><div><h3>安博楷</h3><span>创始人 / CEO</span><p>北京大学法学、工商管理双学位<br>法律场景与 AI 产品</p></div><div><h3>曹义路</h3><span>联合创始人 / 首席科学家</span><p>上海交通大学 × 创智学院<br>大模型算法与后训练</p></div><div><h3>杨汶帛</h3><span>联合创始人 / CTO</span><p>北京大学信息科学与技术<br>Agent 工程与全栈系统</p></div><div><h3>刘天白</h3><span>联合创始人 / CFO</span><p>中国政法大学本硕<br>资本市场与法律服务</p></div><div><h3>郭健</h3><span>行业专家顾问</span><p>前金杜律师事务所高级营销经理<br>法律品牌与市场运营</p></div></div></section>
 
-    <section class="contact-section shell reveal"><h2>预约 SIREN 系统演示</h2><button class="button primary" data-contact>预约 45 分钟系统诊断 <span aria-hidden="true">↗</span></button></section>
+    <section class="contact-section shell reveal"><h2>预约 SIREN 系统演示</h2><button class="button primary" data-contact>预约 45 分钟系统诊断<span class="ui-icon" data-icon="calendar-blank" aria-hidden="true"></span></button></section>
   </main>
-  <footer class="footer shell"><a class="brand" href="#main">原初之幕 <span class="brand-product">/ SIREN</span></a><p>塞壬法律智能系统</p><a href="#product">探索产品 ↗</a><span>© 2026 原初之幕</span></footer>
-  <dialog id="contact-dialog" aria-labelledby="contact-heading"><button class="dialog-close" aria-label="关闭">×</button><p class="section-label">SIREN / 业务交流</p><h2 id="contact-heading">从一个真实问题开始。</h2><p>预约 45 分钟系统诊断会，一起梳理客户问题、知识资料与业务流程，确定 GEO 增长、案件管办或一体化实施路径。</p><div class="meeting-topics"><span>01 客户问题基线</span><span>02 系统与信源诊断</span><span>03 实施优先级</span></div><p class="contact-note">请通过当前项目对接渠道联系原初之幕团队。</p><button class="button primary" id="copy-brief">复制诊断需求模板 <span>↗</span></button><p class="copy-result" role="status" aria-live="polite"></p></dialog>
-  <dialog id="screen-dialog" aria-label="产品界面放大预览"><button class="dialog-close" aria-label="关闭">×</button><img src="../assets/knowledge-library.png" alt="SIREN 产品界面完整预览"></dialog>
+  <footer class="footer shell"><a class="brand" href="#main">原初之幕 <span class="brand-product">/ SIREN</span></a><p>塞壬法律智能系统</p><a href="#product">探索产品<span class="ui-icon" data-icon="arrow-right" aria-hidden="true"></span></a><span>© 2026 原初之幕</span></footer>
+  <dialog id="contact-dialog" aria-labelledby="contact-heading"><button class="dialog-close" aria-label="关闭"><span class="ui-icon" data-icon="x" aria-hidden="true"></span></button><p class="section-label">SIREN / 业务交流</p><h2 id="contact-heading">从一个真实问题开始。</h2><p>预约 45 分钟系统诊断会，一起梳理客户问题、知识资料与业务流程，确定 GEO 增长、案件管办或一体化实施路径。</p><div class="meeting-topics"><span>01 客户问题基线</span><span>02 系统与信源诊断</span><span>03 实施优先级</span></div><p class="contact-note">请通过当前项目对接渠道联系原初之幕团队。</p><button class="button primary" id="copy-brief">复制诊断需求模板<span class="ui-icon" data-icon="copy-simple" aria-hidden="true"></span></button><p class="copy-result" role="status" aria-live="polite"></p></dialog>
+  <dialog id="screen-dialog" aria-label="产品界面放大预览"><button class="dialog-close" aria-label="关闭"><span class="ui-icon" data-icon="x" aria-hidden="true"></span></button><img src="../assets/knowledge-library.png" alt="SIREN 产品界面完整预览"></dialog>
 </body>
 </html>

@@ -1,4 +1,12 @@
-/* Shared readability pass for the two review directions. */
+/* Shared type and component styling for the two review directions. */
+:root {
+  --control-radius: 10px;
+  --panel-radius: 16px;
+  --detail-accent: var(--teal, var(--accent));
+  --detail-tint: color-mix(in srgb, var(--detail-accent) 9%, transparent);
+  --detail-border: color-mix(in srgb, var(--detail-accent) 24%, var(--line));
+}
+
 body {
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
   font-size: 16px;
@@ -7,11 +15,24 @@ body {
 .nav-links { font-size: 15px; gap: 24px; }
 .nav .brand { font-size: 20px; }
 .brand-en, .brand-product, .engine-word { font-family: "IBM Plex Sans", sans-serif; }
-.button { font-size: 15px; min-height: 48px; gap: 22px; border-radius: 5px; }
+.button { font-size: 15px; min-height: 48px; gap: 12px; border-radius: var(--control-radius); }
 .nav-contact { font-size: 14px; min-height: 44px; gap: 12px; }
 .hero-actions { flex-wrap: wrap; }
 .hero h1 { font-size: clamp(42px, 4.9vw, 68px); line-height: 1.28; letter-spacing: -.025em; }
-.eyebrow { font-size: 14px; letter-spacing: .035em; }
+.eyebrow, .case-tag, .product-status, .engine-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border: 1px solid var(--detail-border);
+  border-radius: 999px;
+  background: var(--detail-tint);
+  color: var(--text);
+  line-height: 1.4;
+}
+.eyebrow { font-size: 13px; letter-spacing: .01em; }
+:is(.eyebrow, .case-tag, .product-status, .engine-tag) .ui-icon { color: var(--detail-accent); }
+.engine-tag { padding: 4px 8px; }
 .hero-description { font-size: 18px; line-height: 1.8; text-wrap: pretty; }
 .hero-copy .hero-description { max-width: 25em; }
 .text-button, .text-link { font-size: 15px; gap: 16px; }
@@ -19,13 +40,63 @@ body {
 .hero:has(.hero-intro)::before, .hero:has(.hero-intro)::after { content: none; }
 .engine-visual::after { opacity: .38; }
 .engine-word { letter-spacing: .12em; }
-.engine-node { font-size: 13px; grid-template-columns: 6px auto; }
+.engine-node {
+  display: flex;
+  gap: 7px;
+  border-radius: var(--control-radius);
+  font-size: 13px;
+}
+.engine-node .ui-icon { color: var(--detail-accent); }
 .visual-top, .visual-bottom { font-size: 12px; }
 .visual-bottom { color: #a7baad; }
 .product-callout, .frame-toolbar, .frame-top { font-size: 12px; }
 .frame-identity { font-size: 12px; }
 .frame-caption, .frame-bottom { font-size: 13px; }
-.product-tabs button { font-size: 14px; min-height: 42px; }
+.product-frame, .workflow-preview, .engine-visual, .contact-section {
+  border-radius: var(--panel-radius);
+}
+.mobile-menu, dialog { border-radius: 14px; }
+.screen-button, .menu-toggle, .business-tabs button, .step-button {
+  border-radius: var(--control-radius);
+}
+.frame-toolbar, .frame-top { min-height: 44px; }
+.frame-mode { color: var(--teal); }
+.frame-identity, .footer a[href="#product"], .mobile-menu button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.frame-identity > .ui-icon { margin: 0; color: var(--detail-accent); }
+.product-status { font-size: 12px; padding: 4px 8px; }
+.product-tabs { gap: 6px; }
+.product-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding-inline: 12px;
+  border-radius: var(--control-radius);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.product-tabs button[aria-selected="true"] {
+  border-color: var(--detail-border);
+  background: var(--detail-tint);
+  color: var(--text);
+}
+.product-tabs button[aria-selected="true"] .ui-icon { color: var(--detail-accent); }
+.marquee-control, .zoom-screen, .dialog-close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background-color .2s var(--ease);
+}
+.marquee-control:hover, .zoom-screen:hover, .dialog-close:hover { background: var(--detail-tint); }
 .ecosystem h2, .ecosystem-head > div { font-size: 13px; }
 
 .section-intro h2, .section-heading h2, .product-intro h2 {
@@ -42,12 +113,28 @@ body {
   font-size: 16px;
   line-height: 1.8;
 }
-.solution { background: #171d19; border-radius: 8px; }
+.solution { background: #171d19; border-radius: 14px; }
+.solution-heading { gap: 10px; }
+.icon-tile {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--detail-border);
+  border-radius: 9px;
+  background: var(--detail-tint);
+  color: var(--detail-accent);
+  font-size: 15px;
+}
+.query > .ui-icon, .case-item > .ui-icon, .source-row > .ui-icon { color: var(--detail-accent); }
 .solution h3 { font-size: clamp(24px, 2.5vw, 32px); text-wrap: balance; }
 .solution-heading, .inline-link, .query, .case-item { font-size: 14px; }
 .case-state, .answer-small, .answer-line b { font-size: 12px; }
 .answer-line { font-size: 14px; }
-.foundation-grid h3 { margin-top: 0; }
+.foundation-grid h3 { display: flex; align-items: center; gap: 9px; margin-top: 0; }
+.format-list span { border-radius: 6px; }
+.business-tabs button[aria-selected="true"] { box-shadow: inset 0 0 0 1px var(--detail-border); }
 .business-tabs strong { font-size: 17px; }
 .business-tabs button > span { font-size: 13px; }
 .step-button { font-size: 15px; }
@@ -64,9 +151,25 @@ body {
 .case-detail { padding-left: 148px; }
 .case-detail p { font-size: 16px; line-height: 1.85; }
 .case-detail > span { font-size: 13px; }
-.case-arrow, .case-study[open] .case-arrow { transform: none; }
-.case-arrow::before { content: "+"; }
-.case-study[open] .case-arrow::before { content: "−"; }
+.case-arrow, .case-study[open] .case-arrow {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--detail-accent);
+  font-size: 13px;
+  transform: none;
+  transition: background-color .2s var(--ease), border-color .2s var(--ease);
+}
+.case-arrow .ui-icon { transition: transform .2s var(--ease); }
+.case-study[open] .case-arrow .ui-icon { transform: rotate(180deg); }
+.case-study[open] .case-arrow, .case-study summary:hover .case-arrow {
+  border-color: var(--detail-border);
+  background: var(--detail-tint);
+}
 .case-continuation {
   display: flex;
   align-items: center;

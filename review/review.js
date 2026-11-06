@@ -3,6 +3,8 @@ const tabs = [...document.querySelectorAll('[data-variant]')];
 const panes = [...document.querySelectorAll('.preview-pane')];
 const compareButton = document.querySelector('#compare-toggle');
 const deviceButton = document.querySelector('#device-toggle');
+const compareLabel = compareButton.querySelector('.control-label');
+const deviceLabel = deviceButton.querySelector('.control-label');
 let current = 'light', compare = true, mobile = window.matchMedia('(max-width:600px)').matches;
 function fitFrames() {
   document.querySelectorAll('.preview-stage').forEach(stage => {
@@ -23,9 +25,9 @@ function render() {
   tabs.forEach(tab => {const selected = tab.dataset.variant === current;tab.setAttribute('aria-selected',String(selected));tab.tabIndex = selected ? 0 : -1;});
   panes.forEach(pane => {pane.hidden = !compare && pane.id !== current+'-pane';});
   compareButton.setAttribute('aria-pressed',String(compare));
-  compareButton.textContent = compare ? '返回单页' : '并排对比';
+  compareLabel.textContent = compare ? '返回单页' : '并排对比';
   deviceButton.setAttribute('aria-pressed',String(mobile));
-  deviceButton.textContent = mobile ? '桌面视图' : '手机视图';
+  deviceLabel.textContent = mobile ? '桌面视图' : '手机视图';
   document.querySelector('#review-description').textContent = compare ? '两版可独立滚动。点「打开完整页面」可查看实际字号。' : current === 'light' ? '方案 C：浅色背景，首屏展示产品界面。' : '方案 01：暗色背景，首屏展示 SIREN 智能系统。';
   requestAnimationFrame(fitFrames);
 }

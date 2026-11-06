@@ -17,7 +17,6 @@ pauseButton.addEventListener('click', () => {
   const paused = document.querySelector('.ecosystem').classList.toggle('is-paused');
   pauseButton.setAttribute('aria-pressed', String(paused));
   pauseButton.setAttribute('aria-label', paused ? '继续图标滚动' : '暂停图标滚动');
-  pauseButton.firstElementChild.textContent = paused ? '▶' : 'Ⅱ';
 });
 
 // Progressive enhancement: all content remains visible without JavaScript.

@@ -11,6 +11,13 @@
 .pane-title h1, .pane-title a { font-size: 13px; }
 .pane-title a:hover, footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
 footer { font-size: 12px; }
+.review-stage { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; }
+.variant-tabs button, .view-controls button { border-radius: 10px; }
+.scheme-swatch { width: 16px; height: 16px; border-radius: 5px; }
+.view-controls button, .pane-title a, footer a { display: inline-flex; align-items: center; gap: 7px; }
+.preview-pane { border-radius: 14px; box-shadow: 0 4px 16px #263b450b; }
+.pane-title a { padding: 4px 7px; border-radius: 7px; }
+.pane-title a:hover { background: #edf5f2; }
 @media (max-width: 800px) {
   .variant-tabs button, .view-controls button, .review-note { font-size: 12px; }
   .pane-title a, footer { font-size: 11px; }
