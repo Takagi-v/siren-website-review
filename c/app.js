@@ -44,9 +44,10 @@ function bindTabs(buttons, select) {
     });
   });
 }
+const assetRoot = new URL('../assets/', document.currentScript.src);
 const screens = {
-  knowledge: { src: '../assets/knowledge-library.png', title: '多模态知识库', description: '让文档、表格、图片与扫描件，成为可检索、可调用的依据。', alt: 'SIREN 客户资料库实际界面，包含资料搜索、上传和状态管理' },
-  publishing: { src: '../assets/publishing-workspace.png', title: '多平台运营', description: '统一管理平台账号，连接内容审核、发布执行与结果核验。', alt: 'SIREN 多平台账号管理实际界面，展示小红书、知乎、头条、网易与搜狐账号状态' }
+  knowledge: { src: new URL('knowledge-library.png', assetRoot).href, title: '多模态知识库', description: '让文档、表格、图片与扫描件，成为可检索、可调用的依据。', alt: 'SIREN 客户资料库实际界面，包含资料搜索、上传和状态管理' },
+  publishing: { src: new URL('publishing-workspace.png', assetRoot).href, title: '多平台运营', description: '统一管理平台账号，连接内容审核、发布执行与结果核验。', alt: 'SIREN 多平台账号管理实际界面，展示小红书、知乎、头条、网易与搜狐账号状态' }
 };
 const productButtons = [...document.querySelectorAll('[data-screen]')];
 function selectScreen(button) {
